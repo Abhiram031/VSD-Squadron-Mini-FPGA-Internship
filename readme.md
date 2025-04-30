@@ -93,19 +93,19 @@ SB_HFOSC #(
 The internal oscillator (`SB_HFOSC`) runs at 48 MHz divided by 4 (`CLKHF_DIV = "0b10"`), so:
 
 $$
-f_{\text{int\_osc}} = \frac{48\,\text{MHz}}{4} = 12\,\text{MHz}
+f_{\text{int\\_osc}} = \frac{48\,\text{MHz}}{4} = 12\,\text{MHz}
 $$
 
 Therefore, bit 24 toggles at frequency:
 
 $$
-f_{\text{bit24}} = \frac{f_{\text{int\_osc}}}{2^{25}} = \frac{12 \times 10^{6}}{33,554,432} \approx 0.357\, \text{Hz}
+f_{\text{bit24}} = \frac{f_{\text{int\\_osc}}}{2^{25}} = \frac{12 \times 10^{6}}{33,554,432} \approx 0.357\ \text{Hz}
 $$
 
 The corresponding period is:
 
 $$
-T_{\text{bit24}} = \frac{1}{f_{\text{bit24}}} \approx \frac{1}{0.357} \approx 2.8\, \text{seconds}
+T_{\text{bit24}} = \frac{1}{f_{\text{bit24}}} \approx \frac{1}{0.357} \approx 2.8\ \text{seconds}
 $$
 
 - In the code, the blue LED PWM input is connected to `frequency_counter_i[24]` via `testwire`:
@@ -115,7 +115,7 @@ $$
 - The PWM input here acts as a simple on/off signal (no pulse-width modulation), so the LED is fully ON when `testwire` is high and fully OFF when low.
 
 <p align="center">
-<img src="https://i.imgur.com/DnqtL9S.gif" width="500"/>
+<img src="images/4.gif" width="500" height=""/>
 </p>
 
 *This  generates a slow blinking LED from a high-frequency internal clock by using a binary counter as a frequency divider.*
@@ -127,7 +127,7 @@ $$
 </p>
 
   - RGB LED Driver block using the Lattice iCE40 UltraLite/UltraPlus FPGA primitive `SB_RGBA_DRV`. This hardware block provides high-current open-drain outputs optimized for directly driving RGB LEDs without external components.
-  - 
+
 **SB_RGBA_DRV Parameters Reference**
 
 <table>
