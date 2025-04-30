@@ -90,19 +90,19 @@ SB_HFOSC #(
 - Each bit of this binary counter toggles at half the frequency of the previous bit.  
   For example, bit 0 toggles at `int_osc/2`, bit 1 at `int_osc/4`, ..., bit 24 at `int_osc/2^{25}`.
 
-- The internal oscillator (`SB_HFOSC`) runs at 48 MHz divided by 4 (`CLKHF_DIV = "0b10"`), so:
+The internal oscillator (`SB_HFOSC`) runs at 48 MHz divided by 4 (`CLKHF_DIV = "0b10"`), so:
 
 $$
 f_{\text{int\_osc}} = \frac{48\,\text{MHz}}{4} = 12\,\text{MHz}
 $$
 
-- Therefore, bit 24 toggles at frequency:
+Therefore, bit 24 toggles at frequency:
 
 $$
 f_{\text{bit24}} = \frac{f_{\text{int\_osc}}}{2^{25}} = \frac{12 \times 10^{6}}{33,554,432} \approx 0.357\, \text{Hz}
 $$
 
-- The corresponding period is:
+The corresponding period is:
 
 $$
 T_{\text{bit24}} = \frac{1}{f_{\text{bit24}}} \approx \frac{1}{0.357} \approx 2.8\, \text{seconds}
